@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/baly-web/static/css/main.e6c13ad2.css",
+    "main.js": "/baly-web/static/js/main.6337eddb.js",
+    "static/js/453.68909934.chunk.js": "/baly-web/static/js/453.68909934.chunk.js",
+    "index.html": "/baly-web/index.html",
+    "main.e6c13ad2.css.map": "/baly-web/static/css/main.e6c13ad2.css.map",
+    "main.6337eddb.js.map": "/baly-web/static/js/main.6337eddb.js.map",
+    "453.68909934.chunk.js.map": "/baly-web/static/js/453.68909934.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.6337eddb.js"
+  ]
+}
