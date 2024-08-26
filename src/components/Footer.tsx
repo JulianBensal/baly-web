@@ -3,6 +3,7 @@
 import React from 'react';
 import { Box, Flex, Image, Text, Stack, Link, Button } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import Logo from '../assets/Logo.webp';
 
 const Footer: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Footer: React.FC = () => {
         <Stack direction={{ base: "column", md: "row" }} spacing="8">
           <Stack spacing="4">
             <Flex align="center" gap="4">
-              <Image src="/placeholder.svg?height=32&width=32&text=Logo" alt="Baly Logo" h="8" w="auto" />
+              <Image src={Logo} alt="Baly Logo" h="8" w="auto" />
               <Text fontSize="sm">© 2023 Baly. Todos los derechos reservados.</Text>
             </Flex>
             <Stack fontSize="sm">

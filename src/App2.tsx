@@ -1,15 +1,15 @@
-// pages/index.tsx
-
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import PromoVideoSection from './components/PromoVideoSection';
 import ProductList from './components/ProductList';
 import ProductDetail from './components/ProductDetail';
 import AboutSection from './components/AboutSection';
-import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import ContactPage from './components/form/ContactPage'; // Import the new ContactPage component
 import { Flex, Box, Heading } from "@chakra-ui/react";
+import { FlavorName } from './components/types';
 
 const sizes = [
   { name: "2L", volume: "2000ml", price: 1000 },
@@ -17,16 +17,26 @@ const sizes = [
   { name: "250ml", volume: "250ml", price: 300 },
 ];
 
-const flavors: { id: number; name: FlavorName; image: string }[] = [
-  { id: 1, name: "Tradicional", image: "/placeholder.svg?height=96&width=96&text=Tradicional" },
-  { id: 2, name: "Amarillo", image: "/placeholder.svg?height=96&width=96&text=Amarillo" },
-  { id: 3, name: "Verde", image: "/placeholder.svg?height=96&width=96&text=Verde" },
-  { id: 4, name: "Rojo", image: "/placeholder.svg?height=96&width=96&text=Rojo" },
-  { id: 5, name: "Próximamente", image: "/placeholder.svg?height=96&width=96&text=Próximamente+1" },
-  { id: 6, name: "Próximamente", image: "/placeholder.svg?height=96&width=96&text=Próximamente+2" },
-];
+const basePath = './assets/Gustos';
 
-type FlavorName = 'Tradicional' | 'Amarillo' | 'Verde' | 'Rojo' | 'Próximamente';
+const getFlavorImage = (flavorName: FlavorName, size: string, basePath: string) => {
+  if (flavorName === "Próximamente") {
+    return `${basePath}/Próximamente_${size}.jpg`;
+  } else {
+    const path = `${basePath}/${flavorName}_${size}.png`;
+    console.log(`Image path for ${flavorName} (${size}):`, path);
+    return path;
+  }
+};
+
+const flavors: { id: number; name: FlavorName; image: string }[] = [
+  { id: 1, name: "Tradicional", image: getFlavorImage("Tradicional", "473ml", basePath) }, // Default size
+  { id: 2, name: "Amarillo", image: getFlavorImage("Amarillo", "473ml", basePath) },
+  { id: 3, name: "Verde", image: getFlavorImage("Verde", "473ml", basePath) },
+  { id: 4, name: "Rojo", image: getFlavorImage("Rojo", "473ml", basePath) },
+  { id: 5, name: "Próximamente", image: getFlavorImage("Próximamente", "473ml", basePath) },
+  { id: 6, name: "Próximamente", image: getFlavorImage("Próximamente", "473ml", basePath) },
+];
 
 const productInfo: Record<FlavorName, { description: string; details: string; image: string }> = {
   "Tradicional": {
@@ -85,41 +95,49 @@ const App2: React.FC = () => {
   };
 
   return (
-    <Flex direction="column" minH="100vh" bg="black" color="white" fontFamily="sans-serif">
-      <Header 
-        isMenuOpen={isMenuOpen} 
-        cartCount={cartCount} 
-        activeSection={activeSection} 
-        onToggleMenu={() => setIsMenuOpen(!isMenuOpen)} 
-        onSectionClick={(section) => setActiveSection(section)} 
-        onAddToCart={addToCart}
-      />
-      <HeroSection />
-      <PromoVideoSection isPlaying={isPlaying} togglePlay={togglePlay} />
-      <Box id="products" py={{ base: 12, md: 24 }}>
-        <Box maxW="7xl" mx="auto" px="4">
-          <Heading as="h2" size="2xl" fontWeight="bold" mb="12" textAlign="center" color="#FFD700">Nuestros Productos</Heading>
-          <ProductList 
-            flavors={flavors} 
-            selectedFlavor={selectedFlavor} 
-            setSelectedFlavor={setSelectedFlavor} 
-          />
-          <ProductDetail 
-            selectedFlavor={selectedFlavor} 
-            selectedSize={selectedSize} 
-            isSugarFree={isSugarFree} 
-            setIsSugarFree={setIsSugarFree} 
-            setSelectedSize={setSelectedSize} 
-            addToCart={addToCart} 
-            sizes={sizes} 
-            productInfo={productInfo}
-          />
-        </Box>
-      </Box>
-      <AboutSection />
-      <ContactSection />
-      <Footer />
-    </Flex>
+    <Router>
+      <Flex direction="column" minH="100vh" bg="black" color="white" fontFamily="sans-serif">
+        <Header 
+          isMenuOpen={isMenuOpen} 
+          cartCount={cartCount} 
+          activeSection={activeSection} 
+          onToggleMenu={() => setIsMenuOpen(!isMenuOpen)} 
+          onSectionClick={(section) => setActiveSection(section)} 
+          onAddToCart={addToCart}
+        />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <HeroSection />
+              <PromoVideoSection isPlaying={isPlaying} togglePlay={togglePlay} />
+              <Box id="products" py={{ base: 12, md: 24 }}>
+                <Box maxW="7xl" mx="auto" px="4">
+                  <Heading as="h2" size="2xl" fontWeight="bold" mb="12" textAlign="center" color="#FFD700">Nuestros Productos</Heading>
+                  <ProductList 
+                    flavors={flavors} 
+                    selectedFlavor={selectedFlavor} 
+                    setSelectedFlavor={setSelectedFlavor} 
+                  />
+                  <ProductDetail 
+                    selectedFlavor={selectedFlavor} 
+                    selectedSize={selectedSize} 
+                    isSugarFree={isSugarFree} 
+                    setIsSugarFree={setIsSugarFree} 
+                    setSelectedSize={setSelectedSize} 
+                    addToCart={addToCart} 
+                    sizes={sizes}
+                    productInfo={productInfo}
+                  />
+                </Box>
+              </Box>
+              <AboutSection />
+            </>
+          } />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+        <Footer />
+      </Flex>
+    </Router>
   );
 };
 
