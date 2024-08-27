@@ -62,7 +62,6 @@ const productInfo: Record<FlavorName, { description: string; details: string; im
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [selectedSize, setSelectedSize] = useState(sizes[1]);
   const [isSugarFree, setIsSugarFree] = useState(false);
@@ -71,17 +70,6 @@ const App: React.FC = () => {
     id: 1,
     name: "Tradicional"
   });
-
-  const togglePlay = () => {
-    const video = document.getElementById('promoVideo') as HTMLVideoElement;
-    if (video.paused) {
-      video.play();
-      setIsPlaying(true);
-    } else {
-      video.pause();
-      setIsPlaying(false);
-    }
-  };
 
   const addToCart = () => {
     setCartCount(prevCount => prevCount + 1);
