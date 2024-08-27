@@ -31,16 +31,6 @@ interface ProductDetailProps {
 
 type SizeName = '250ml' | '473ml' | '2L';
 
-interface Size {
-  name: SizeName;
-}
-
-interface ProductImageProps {
-  imagePath: string;
-  selectedSize: Size; // Asegúrate de que `selectedSize` usa el tipo `SizeName`
-  selectedFlavor: { name: string };
-}
-
 const sizeMapping: Record<SizeName, string> = {
   '250ml': '350px',
   '473ml': '350px',
@@ -50,7 +40,7 @@ const sizeMapping: Record<SizeName, string> = {
 const sizeMapping2: Record<SizeName, string> = {
   '250ml': '800px',
   '473ml': '800px',
-  '2L': '1600px'
+  '2L': '1400px'
 };
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedSize, isSugarFree, setIsSugarFree, setSelectedSize, addToCart, sizes, productInfo }) => {
