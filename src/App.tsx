@@ -22,18 +22,6 @@ const sizes = [
   { name: "250ml", volume: "250ml", price: 300 },
 ];
 
-const basePath = './assets/Gustos';
-
-const getFlavorImage = (flavorName: FlavorName, size: string, basePath: string) => {
-  if (flavorName === "Próximamente") {
-    return `${basePath}/Próximamente_${size}.jpg`;
-  } else {
-    const path = `${basePath}/${flavorName}_${size}.png`;
-    console.log(`Image path for ${flavorName} (${size}):`, path);
-    return path;
-  }
-};
-
 const flavors: { id: number; name: FlavorName; image: string }[] = [
   { id: 1, name: "Tradicional", image: Tradicional }, // Default size
   { id: 2, name: "Amarillo", image: Amarillo },
