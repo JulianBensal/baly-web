@@ -1,15 +1,29 @@
 {
   "files": {
-    "main.css": "/baly-web/static/css/main.e6c13ad2.css",
-    "main.js": "/baly-web/static/js/main.6337eddb.js",
-    "static/js/453.68909934.chunk.js": "/baly-web/static/js/453.68909934.chunk.js",
+    "main.css": "/baly-web/static/css/main.c800aa68.css",
+    "main.js": "/baly-web/static/js/main.e066a330.js",
+    "static/js/453.a25a298a.chunk.js": "/baly-web/static/js/453.a25a298a.chunk.js",
+    "static/media/Verde_473ml.png": "/baly-web/static/media/Verde_473ml.19ad97ca6ec0a2c3d4e5.png",
+    "static/media/Amarillo_473ml.png": "/baly-web/static/media/Amarillo_473ml.3c3dc8e343be1517af82.png",
+    "static/media/Tradicional_473ml.png": "/baly-web/static/media/Tradicional_473ml.c3912cfb5c602bd2b1f4.png",
+    "static/media/Rojo_473ml.png": "/baly-web/static/media/Rojo_473ml.cfdfe92326a1ff7ed472.png",
+    "static/media/Verde_250ml.png": "/baly-web/static/media/Verde_250ml.3f23caa7bcf1c2a908a3.png",
+    "static/media/Amarillo_250ml.png": "/baly-web/static/media/Amarillo_250ml.a38b5dc63a260a904ff6.png",
+    "static/media/Tradicional_250ml.png": "/baly-web/static/media/Tradicional_250ml.b7abd12dceb3da7bfae7.png",
+    "static/media/Rojo_250ml.png": "/baly-web/static/media/Rojo_250ml.4fe06f308c314c69b1f8.png",
+    "static/media/Amarillo_2L.png": "/baly-web/static/media/Amarillo_2L.30dcc0a2c0f2e71929c6.png",
+    "static/media/Rojo_2L.png": "/baly-web/static/media/Rojo_2L.6bf27a2ddbaef66c1ab8.png",
+    "static/media/Verde_2L.png": "/baly-web/static/media/Verde_2L.9d0965171375f88a514e.png",
+    "static/media/Tradicional_2L.png": "/baly-web/static/media/Tradicional_2L.84c8755e15d22f4a3974.png",
+    "static/media/Próximamente.jpg": "/baly-web/static/media/Próximamente.c4ebc920023a95000455.jpg",
+    "static/media/Logo.webp": "/baly-web/static/media/Logo.0ac765adf3775733fb7c.webp",
     "index.html": "/baly-web/index.html",
-    "main.e6c13ad2.css.map": "/baly-web/static/css/main.e6c13ad2.css.map",
-    "main.6337eddb.js.map": "/baly-web/static/js/main.6337eddb.js.map",
-    "453.68909934.chunk.js.map": "/baly-web/static/js/453.68909934.chunk.js.map"
+    "main.c800aa68.css.map": "/baly-web/static/css/main.c800aa68.css.map",
+    "main.e066a330.js.map": "/baly-web/static/js/main.e066a330.js.map",
+    "453.a25a298a.chunk.js.map": "/baly-web/static/js/453.a25a298a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.6337eddb.js"
+    "static/css/main.c800aa68.css",
+    "static/js/main.e066a330.js"
   ]
 }
