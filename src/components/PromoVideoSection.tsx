@@ -1,13 +1,8 @@
 import React from 'react';
-import { Box, Flex, IconButton, Heading, Text } from "@chakra-ui/react";
-import { FaPlay, FaPause } from 'react-icons/fa';
+import { Box } from "@chakra-ui/react";
+import BackgroundVideo from '../assets/vo_pixel_dark.png';
 
-interface PromoVideoSectionProps {
-  isPlaying: boolean;
-  togglePlay: () => void;
-}
-
-const PromoVideoSection: React.FC<PromoVideoSectionProps> = ({ isPlaying, togglePlay }) => {
+const PromoVideoSection: React.FC = () => {
   return (
     <Box w="full" bg="gray.900" position="relative" overflow="hidden" height="calc(100vh - 80px)">
       <Box
@@ -22,27 +17,28 @@ const PromoVideoSection: React.FC<PromoVideoSectionProps> = ({ isPlaying, toggle
         loop
         muted
         playsInline
+        autoPlay // Asegura que el video se reproduzca automáticamente
         poster="/placeholder.svg?height=600&width=1200&text=Baly+Video+Poster"
       >
         <source src="https://balybrasil.com.br/files/home/Video-20240221171312.mp4" type="video/mp4" /> {/* Enlace directo al video */}
         Your browser does not support the video tag.
       </Box>
-      <Flex position="absolute" inset="0" bg="blackAlpha.500" align="center" justify="center">
-        <IconButton
-          aria-label="Toggle Play"
-          borderRadius="full"
-          size="lg"
-          bg="blackAlpha.500"
-          color="#FFD700"
-          _hover={{ bg: "blackAlpha.700" }}
-          onClick={togglePlay}
-          icon={isPlaying ? <Box as={FaPause} fontSize="2xl" /> : <Box as={FaPlay} fontSize="2xl" />}
-        />
-      </Flex>
-      <Box position="absolute" bottom="8" left="8" right="8" color="white">
-        <Heading as="h2" size="xl" fontWeight="extrabold" mb="2" color="#FFD700">Experience Baly Energy</Heading>
-        <Text fontSize="lg" fontWeight="medium">Discover how Baly pushes you beyond your limits</Text>
-      </Box>
+
+      {/* Superposición con la imagen de puntos */}
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        w="full"
+        h="full"
+        bgImage={`url(${BackgroundVideo})`} // Usa la imagen de puntos como fondo
+        bgSize="auto" // Asegura que la imagen se repita según su tamaño original
+        bgRepeat="repeat" // Repite la imagen para cubrir todo el contenedor
+        bgPosition="center" // Centra la imagen en el contenedor
+        opacity="0.3" // Ajusta la opacidad según sea necesario
+        pointerEvents="none" // Evita que la superposición interfiera con la interacción del usuario
+      />
+      
     </Box>
   );
 }

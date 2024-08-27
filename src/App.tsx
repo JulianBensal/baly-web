@@ -102,7 +102,7 @@ const App: React.FC = () => {
           <Route path="/baly-web/" element={
             <>
               <HeroSection />
-              <PromoVideoSection isPlaying={isPlaying} togglePlay={togglePlay} />
+              <PromoVideoSection />
               <Box id="products" py={{ base: 12, md: 24 }}>
                 <Box maxW="7xl" mx="auto" px="4">
                   <Heading as="h2" size="2xl" fontWeight="bold" mb="12" textAlign="center" color="#FFD700">Nuestros Productos</Heading>
