@@ -1,9 +1,9 @@
-// components/Header.tsx
-
 import React from 'react';
-import { Box, Flex, Image, Link, Text, Button, IconButton, Stack } from "@chakra-ui/react";
+import { Box, Flex, Image, Link as ChakraLink, Text, Button, IconButton, Stack } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import Logo from '../assets/Logo.webp';
 
 interface HeaderProps {
   isMenuOpen: boolean;
@@ -18,13 +18,13 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, cartCount, activeSection, o
   return (
     <Box as="header" position="sticky" top="0" zIndex="50" w="full" borderBottom="1px" borderColor="gray.800" bg="blackAlpha.800" backdropFilter="blur(10px)">
       <Flex align="center" justify="space-between" py="4" px="6">
-        <Link href="/" display="flex" alignItems="center">
-          <Image src="/placeholder.svg?height=32&width=32&text=Logo" alt="Baly Logo" h="8" w="auto" />
+        <ChakraLink href="/" display="flex" alignItems="center">
+          <Image src={Logo} alt="Baly Logo" h="8" w="auto" />
           <Text display={{ base: 'none', sm: 'inline-block' }} fontWeight="bold" color="#FFD700" ml="2">Baly</Text>
-        </Link>
+        </ChakraLink>
         <Flex as="nav" display={{ base: 'none', md: 'flex' }} align="center" gap="6">
-          {['home', 'products', 'about', 'contact'].map((section) => (
-            <Link
+          {['home', 'products', 'about'].map((section) => (
+            <ChakraLink
               key={section}
               href={`#${section}`}
               color={activeSection === section ? '#FFD700' : 'white'}
@@ -33,8 +33,15 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, cartCount, activeSection, o
               _hover={{ color: '#FFD700' }}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
-            </Link>
+            </ChakraLink>
           ))}
+          <Link
+            to="/contact" // Use Link to route to the ContactPage
+            style={{ color: activeSection === 'contact' ? '#FFD700' : 'white', fontWeight: 'bold' }}
+            onClick={() => onSectionClick('contact')}
+          >
+            Contact
+          </Link>
         </Flex>
         <Flex align="center">
           <Button bg="#FFD700" color="black" _hover={{ bg: '#FFA500' }} borderRadius="full" onClick={onAddToCart}>
@@ -53,8 +60,8 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, cartCount, activeSection, o
       {isMenuOpen && (
         <Box display={{ md: 'none' }} p="4">
           <Stack spacing="4">
-            {['home', 'products', 'about', 'contact'].map((section) => (
-              <Link
+            {['home', 'products', 'about'].map((section) => (
+              <ChakraLink
                 key={section}
                 href={`#${section}`}
                 color={activeSection === section ? '#FFD700' : 'white'}
@@ -66,8 +73,18 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, cartCount, activeSection, o
                 _hover={{ color: '#FFD700' }}
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
-              </Link>
+              </ChakraLink>
             ))}
+            <Link
+              to="/contact"
+              style={{ color: activeSection === 'contact' ? '#FFD700' : 'white', fontWeight: 'bold' }}
+              onClick={() => {
+                onSectionClick('contact');
+                onToggleMenu();
+              }}
+            >
+              Contact
+            </Link>
           </Stack>
         </Box>
       )}
