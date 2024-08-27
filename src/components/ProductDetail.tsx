@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Flex, Heading, Text, Button, Stack, Image } from "@chakra-ui/react";
 import { FaShoppingCart } from 'react-icons/fa';
 import { FlavorName } from './types';
+import { useState } from 'react';
 
 import Tradicional_473ml from '../assets/Gustos/Tradicional_473ml.png';
 import Tradicional_250ml from '../assets/Gustos/Tradicional_250ml.png';
@@ -28,7 +29,39 @@ interface ProductDetailProps {
   productInfo: Record<FlavorName, { description: string; details: string; image: string }>;
 }
 
+type SizeName = '250ml' | '473ml' | '2L';
+
+interface Size {
+  name: SizeName;
+}
+
+interface ProductImageProps {
+  imagePath: string;
+  selectedSize: Size; // Asegúrate de que `selectedSize` usa el tipo `SizeName`
+  selectedFlavor: { name: string };
+}
+
+const sizeMapping: Record<SizeName, string> = {
+  '250ml': '350px',
+  '473ml': '350px',
+  '2L': '500px'
+};
+
+const sizeMapping2: Record<SizeName, string> = {
+  '250ml': '800px',
+  '473ml': '800px',
+  '2L': '1600px'
+};
+
 const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedSize, isSugarFree, setIsSugarFree, setSelectedSize, addToCart, sizes, productInfo }) => {
+  const [currentSize, setCurrentSize] = useState(sizeMapping[selectedSize.name as SizeName]);
+  const [currentSize2, setCurrentSize2] = useState(sizeMapping2[selectedSize.name as SizeName]);
+
+  const handleImageLoad = () => {
+    setCurrentSize(sizeMapping[selectedSize.name as SizeName]);
+    setCurrentSize2(sizeMapping2[selectedSize.name as SizeName]);
+  };
+  
   // Genera la ruta de la imagen según el sabor y el tamaño seleccionado
   const getImagePath = (flavor: FlavorName, size: string): string => {
     switch (flavor) {
@@ -144,13 +177,37 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
         </Box>
 
         {/* Segundo Box - Imagen del Producto */}
-        <Flex justify="center" align="center" bg="gray.800" borderRadius="lg" p="6" w={{ base: "full", md: "50%" }} h="500px">
+        <Flex
+          justify="center"
+          align="center"
+          borderRadius="lg"
+          p="6"
+          w={{ base: "full", md: "50%" }}
+          h="500px"
+          position="relative" // Asegura que el contenedor sea relativo para posicionar el pseudo-elemento correctamente
+          _before={{
+            content: '""',
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "80%",
+            height: "120%",
+            background: "radial-gradient(circle, rgba(255, 255, 255, 0.6), transparent 70%)",
+            borderRadius: "50%",
+            zIndex: 1,
+            filter: "blur(20px)",
+          }}
+        >
           <Image
             src={imagePath}
             alt={`Baly ${selectedFlavor.name} ${selectedSize.name}`}
-            maxH="full"
+            maxH={currentSize} 
             maxW="full"
             objectFit="contain"
+            position="relative"
+            zIndex={2} // Asegura que la imagen esté encima del pseudo-elemento
+            onLoad={handleImageLoad} 
           />
         </Flex>
       </Flex>
@@ -171,11 +228,12 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
           </Box>
           <Box>
             <Image
-              src={productInfo[selectedFlavor.name].image}
+              src={imagePath}
               alt={`Baly ${selectedFlavor.name} Bottle Tilted`}
-              maxH="400px"
+              maxH={currentSize2}	
               objectFit="contain"
-              transform="rotate(-12deg)"
+              transform="rotate(12deg)"
+              onLoad={handleImageLoad} 
             />
           </Box>
         </Flex>

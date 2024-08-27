@@ -2,10 +2,11 @@
 
 import React from 'react';
 import { Box, Stack, Heading, Text, Button } from "@chakra-ui/react";
+import Fondo from '../assets/baly-fondo.webp';
 
 const HeroSection: React.FC = () => {
   return (
-    <Box id="home" w="full" py={{ base: 12, md: 24 }} bgImage="url('/placeholder.svg?height=600&width=1200&text=Baly+Hero+Image')" bgSize="cover" bgPosition="center" position="relative" overflow="hidden">
+    <Box id="home" w="full" py={{ base: 12, md: 24 }} bgImage={Fondo} bgSize="cover" bgPosition="center" position="relative" overflow="hidden">
       <Box position="absolute" inset="0" bgGradient="linear(to-r, black, transparent)" />
       <Box position="relative" zIndex="10" px={{ base: 4, md: 6 }}>
         <Stack spacing="4" align="flex-start">

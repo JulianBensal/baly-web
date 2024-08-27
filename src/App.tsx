@@ -10,10 +10,10 @@ import Footer from './components/Footer';
 import ContactPage from './components/form/ContactPage'; // Import the new ContactPage component
 import { Flex, Box, Heading } from "@chakra-ui/react";
 import { FlavorName } from './components/types';
-import Tradicional from './assets/Gustos/Tradicional_473ml.png';
-import Amarillo from './assets/Gustos/Amarillo_473ml.png';
-import Verde from './assets/Gustos/Verde_473ml.png';
-import Rojo from './assets/Gustos/Rojo_473ml.png';
+import Tradicional from './assets/Carrusel/Tradicional_Carrusel.webp';
+import Amarillo from './assets/Carrusel/Amarillo_Carrusel.webp';
+import Verde from './assets/Carrusel/Verde_Carrusel.webp';
+import Rojo from './assets/Carrusel/Rojo_Carrusel.webp';
 import Proximamente from './assets/Gustos/Próximamente.jpg';
 
 const sizes = [
@@ -35,27 +35,27 @@ const productInfo: Record<FlavorName, { description: string; details: string; im
   "Tradicional": {
     description: "El Baly Tradicional tiene el sabor clásico de energéticos, intenso y refrescante.",
     details: "Es perfecto para quienes buscan un impulso de energía para enfrentar los desafíos diarios, ya sea en el trabajo, en los estudios o en los momentos de diversión.",
-    image: "/placeholder.svg?height=400&width=200&text=Baly+Tradicional+Tilted"
+    image: Tradicional
   },
   "Amarillo": {
     description: "Baly Amarillo ofrece un sabor cítrico y vibrante, con notas de limón y naranja.",
     details: "Ideal para aquellos que buscan un sabor refrescante y un impulso de energía con un toque tropical.",
-    image: "/placeholder.svg?height=400&width=200&text=Baly+Amarillo+Tilted"
+    image: Amarillo
   },
   "Verde": {
     description: "Baly Verde combina el sabor de las manzanas verdes con un toque de kiwi.",
     details: "Perfecto para los amantes de los sabores frutales que buscan una explosión de energía y frescura.",
-    image: "/placeholder.svg?height=400&width=200&text=Baly+Verde+Tilted"
+    image: Verde
   },
   "Rojo": {
     description: "Baly Rojo mezcla el sabor intenso de las frutas rojas con un toque de guaraná.",
     details: "Diseñado para los que buscan un sabor audaz y una carga extra de energía para sus actividades más intensas.",
-    image: "/placeholder.svg?height=400&width=200&text=Baly+Rojo+Tilted"
+    image: Rojo
   },
   "Próximamente": {
     description: "Estamos trabajando en nuevos y emocionantes sabores.",
     details: "Mantente atento a nuestras redes sociales para ser el primero en probar nuestras nuevas creaciones.",
-    image: "/placeholder.svg?height=400&width=200&text=Baly+Próximamente+Tilted"
+    image: Proximamente
   }
 };
 

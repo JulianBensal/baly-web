@@ -1,5 +1,3 @@
-// components/PromoVideoSection.tsx
-
 import React from 'react';
 import { Box, Flex, IconButton, Heading, Text } from "@chakra-ui/react";
 import { FaPlay, FaPause } from 'react-icons/fa';
@@ -26,7 +24,7 @@ const PromoVideoSection: React.FC<PromoVideoSectionProps> = ({ isPlaying, toggle
         playsInline
         poster="/placeholder.svg?height=600&width=1200&text=Baly+Video+Poster"
       >
-        <source src="/baly-promo-video.mp4" type="video/mp4" />
+        <source src="https://balybrasil.com.br/files/home/Video-20240221171312.mp4" type="video/mp4" /> {/* Enlace directo al video */}
         Your browser does not support the video tag.
       </Box>
       <Flex position="absolute" inset="0" bg="blackAlpha.500" align="center" justify="center">
