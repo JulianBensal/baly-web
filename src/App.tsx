@@ -99,7 +99,7 @@ const App: React.FC = () => {
           onAddToCart={addToCart}
         />
         <Routes>
-          <Route path="/" element={
+          <Route path="/baly-web/" element={
             <>
               <HeroSection />
               <PromoVideoSection isPlaying={isPlaying} togglePlay={togglePlay} />
@@ -126,7 +126,7 @@ const App: React.FC = () => {
               <AboutSection />
             </>
           } />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/baly-web/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
       </Flex>
