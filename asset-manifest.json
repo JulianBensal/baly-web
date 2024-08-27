@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/baly-web/static/css/main.c800aa68.css",
-    "main.js": "/baly-web/static/js/main.e1c4a31b.js",
+    "main.js": "/baly-web/static/js/main.fdf4e2cd.js",
     "static/js/453.a25a298a.chunk.js": "/baly-web/static/js/453.a25a298a.chunk.js",
     "static/media/Verde_473ml.png": "/baly-web/static/media/Verde_473ml.19ad97ca6ec0a2c3d4e5.png",
     "static/media/Amarillo_473ml.png": "/baly-web/static/media/Amarillo_473ml.3c3dc8e343be1517af82.png",
@@ -24,11 +24,11 @@
     "static/media/Logo.webp": "/baly-web/static/media/Logo.0ac765adf3775733fb7c.webp",
     "index.html": "/baly-web/index.html",
     "main.c800aa68.css.map": "/baly-web/static/css/main.c800aa68.css.map",
-    "main.e1c4a31b.js.map": "/baly-web/static/js/main.e1c4a31b.js.map",
+    "main.fdf4e2cd.js.map": "/baly-web/static/js/main.fdf4e2cd.js.map",
     "453.a25a298a.chunk.js.map": "/baly-web/static/js/453.a25a298a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c800aa68.css",
-    "static/js/main.e1c4a31b.js"
+    "static/js/main.fdf4e2cd.js"
   ]
 }
