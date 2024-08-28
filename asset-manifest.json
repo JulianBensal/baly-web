@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/baly-web/static/css/main.c800aa68.css",
-    "main.js": "/baly-web/static/js/main.fdf4e2cd.js",
+    "main.js": "/baly-web/static/js/main.321f16a5.js",
     "static/js/453.a25a298a.chunk.js": "/baly-web/static/js/453.a25a298a.chunk.js",
     "static/media/Verde_473ml.png": "/baly-web/static/media/Verde_473ml.19ad97ca6ec0a2c3d4e5.png",
     "static/media/Amarillo_473ml.png": "/baly-web/static/media/Amarillo_473ml.3c3dc8e343be1517af82.png",
@@ -15,7 +15,19 @@
     "static/media/Rojo_2L.png": "/baly-web/static/media/Rojo_2L.6bf27a2ddbaef66c1ab8.png",
     "static/media/Verde_2L.png": "/baly-web/static/media/Verde_2L.9d0965171375f88a514e.png",
     "static/media/Tradicional_2L.png": "/baly-web/static/media/Tradicional_2L.84c8755e15d22f4a3974.png",
-    "static/media/baly-fondo.webp": "/baly-web/static/media/baly-fondo.7415cebc4223828e1900.webp",
+    "static/media/baly-fondo.webp": "/baly-web/static/media/baly-fondo.721b49c864813dfc2856.webp",
+    "static/media/Amarillo_2L_fin.webp": "/baly-web/static/media/Amarillo_2L_fin.270c841a1e124c05039a.webp",
+    "static/media/Rojo_2L_fin.webp": "/baly-web/static/media/Rojo_2L_fin.b2afce8df9bb7cf36927.webp",
+    "static/media/Amarillo_473ml_fin.webp": "/baly-web/static/media/Amarillo_473ml_fin.9af63170240d78a0f3b4.webp",
+    "static/media/Amarillo_250ml_fin.webp": "/baly-web/static/media/Amarillo_250ml_fin.fb6482c22327f4e1bac3.webp",
+    "static/media/Verde_2L_fin.webp": "/baly-web/static/media/Verde_2L_fin.ec5c318e5b9cadfe24af.webp",
+    "static/media/Rojo_473ml_fin.webp": "/baly-web/static/media/Rojo_473ml_fin.8d063548f1a1b6918c45.webp",
+    "static/media/Rojo_250ml_fin.webp": "/baly-web/static/media/Rojo_250ml_fin.ac162c622403c6c9337b.webp",
+    "static/media/Verde_473ml_fin.webp": "/baly-web/static/media/Verde_473ml_fin.07f57ef91599258dee06.webp",
+    "static/media/Verde_250ml_fin.webp": "/baly-web/static/media/Verde_250ml_fin.aee60c548419e1f726e7.webp",
+    "static/media/Tradicional_2L_fin.webp": "/baly-web/static/media/Tradicional_2L_fin.d5bfdaa755b3a10de3a1.webp",
+    "static/media/Tradicional_473ml_fin.webp": "/baly-web/static/media/Tradicional_473ml_fin.a50fca24d3ca55ff4736.webp",
+    "static/media/Tradicional_250ml_fin.webp": "/baly-web/static/media/Tradicional_250ml_fin.b867c4f907a973e03684.webp",
     "static/media/Próximamente.jpg": "/baly-web/static/media/Próximamente.c4ebc920023a95000455.jpg",
     "static/media/Tradicional_Carrusel.webp": "/baly-web/static/media/Tradicional_Carrusel.d52d0d76c1a97476128c.webp",
     "static/media/Rojo_Carrusel.webp": "/baly-web/static/media/Rojo_Carrusel.892f23663e23ee954c98.webp",
@@ -24,11 +36,11 @@
     "static/media/Logo.webp": "/baly-web/static/media/Logo.0ac765adf3775733fb7c.webp",
     "index.html": "/baly-web/index.html",
     "main.c800aa68.css.map": "/baly-web/static/css/main.c800aa68.css.map",
-    "main.fdf4e2cd.js.map": "/baly-web/static/js/main.fdf4e2cd.js.map",
+    "main.321f16a5.js.map": "/baly-web/static/js/main.321f16a5.js.map",
     "453.a25a298a.chunk.js.map": "/baly-web/static/js/453.a25a298a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c800aa68.css",
-    "static/js/main.fdf4e2cd.js"
+    "static/js/main.321f16a5.js"
   ]
 }
