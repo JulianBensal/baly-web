@@ -40,7 +40,7 @@ const sizeMapping: Record<SizeName, string> = {
 const sizeMapping2: Record<SizeName, string> = {
   '250ml': '800px',
   '473ml': '800px',
-  '2L': '1400px'
+  '2L': '1300px'
 };
 
 const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedSize, isSugarFree, setIsSugarFree, setSelectedSize, addToCart, sizes, productInfo }) => {
@@ -119,11 +119,16 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
           </Text>
           <Button
             onClick={() => setIsSugarFree(!isSugarFree)}
-            bg="#FFD700"
-            color="black"
-            _hover={{ bg: '#FFA500' }}
+            bg={isSugarFree ? "green.300" : "gray.900"}
+            color={isSugarFree ? "gray.900" : "green.300"}
+            _hover={{ 
+              bg: isSugarFree ? "gray.900" : "green.300", 
+              color: isSugarFree ? "white" : "gray.900",
+            }}
             size="lg"
             mb="4"
+            borderWidth="1px"
+            borderColor={isSugarFree ? "gray.900" : "green.300"}
           >
             {isSugarFree ? "Ver versión con azúcar" : "Conoce la versión sin azúcar"}
           </Button>
@@ -222,7 +227,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
               alt={`Baly ${selectedFlavor.name} Bottle Tilted`}
               maxH={currentSize2}	
               objectFit="contain"
-              transform="rotate(12deg)"
+              transform="rotate(9deg)"
               onLoad={handleImageLoad} 
             />
           </Box>
