@@ -17,6 +17,18 @@ import Verde_473ml from '../assets/Gustos/Verde_473ml.png';
 import Verde_250ml from '../assets/Gustos/Verde_250ml.png';
 import Verde_2L from '../assets/Gustos/Verde_2L.png';
 import Proximamente from '../assets/Gustos/Próximamente.jpg';
+import Amarillo_473ml_fin from '../assets/Gustos_Fin/Amarillo_473ml_fin.webp';
+import Amarillo_250ml_fin from '../assets/Gustos_Fin/Amarillo_250ml_fin.webp';
+import Amarillo_2L_fin from '../assets/Gustos_Fin/Amarillo_2L_fin.webp';
+import Rojo_473ml_fin from '../assets/Gustos_Fin/Rojo_473ml_fin.webp';
+import Rojo_250ml_fin from '../assets/Gustos_Fin/Rojo_250ml_fin.webp';
+import Rojo_2L_fin from '../assets/Gustos_Fin/Rojo_2L_fin.webp';
+import Tradicional_473ml_fin from '../assets/Gustos_Fin/Tradicional_473ml_fin.webp';
+import Tradicional_250ml_fin from '../assets/Gustos_Fin/Tradicional_250ml_fin.webp';
+import Tradicional_2L_fin from '../assets/Gustos_Fin/Tradicional_2L_fin.webp';
+import Verde_473ml_fin from '../assets/Gustos_Fin/Verde_473ml_fin.webp';
+import Verde_250ml_fin from '../assets/Gustos_Fin/Verde_250ml_fin.webp';
+import Verde_2L_fin from '../assets/Gustos_Fin/Verde_2L_fin.webp';
 
 interface ProductDetailProps {
   selectedFlavor: { id: number, name: FlavorName };
@@ -105,6 +117,59 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
   };
 
   const imagePath = getImagePath(selectedFlavor.name, selectedSize.name);
+
+  const getImagePathFin = (flavor: FlavorName, size: string): string => {
+    switch (flavor) {
+      case 'Tradicional':
+        switch (size) {
+          case '473ml':
+            return Tradicional_473ml_fin;
+          case '250ml':
+            return Tradicional_250ml_fin;
+          case '2L':
+            return Tradicional_2L_fin;
+          default:
+            return Tradicional_473ml_fin;
+        }
+      case 'Rojo':
+        switch (size) {
+          case '473ml':
+            return Rojo_473ml_fin;
+          case '250ml':
+            return Rojo_250ml_fin;
+          case '2L':
+            return Rojo_2L_fin;
+          default:
+            return Rojo_473ml_fin;
+        }
+      case 'Amarillo':
+        switch (size) {
+          case '473ml':
+            return Amarillo_473ml_fin;
+          case '250ml':
+            return Amarillo_250ml_fin;
+          case '2L':
+            return Amarillo_2L_fin;
+          default:
+            return Amarillo_473ml_fin;
+        }
+      case 'Verde':
+        switch (size) {
+          case '473ml':
+            return Verde_473ml_fin;
+          case '250ml':
+            return Verde_250ml_fin;
+          case '2L':
+            return Verde_2L_fin;
+          default:
+            return Verde_473ml_fin;
+        }
+      default:
+        return Proximamente; // Imagen por defecto
+    }
+  };
+
+  const imagePathFin = getImagePathFin(selectedFlavor.name, selectedSize.name);
 
   return (
     <Stack spacing="8" align="flex-start" w="full">
@@ -223,11 +288,10 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
           </Box>
           <Box>
             <Image
-              src={imagePath}
+              src={imagePathFin}
               alt={`Baly ${selectedFlavor.name} Bottle Tilted`}
               maxH={currentSize2}	
               objectFit="contain"
-              transform="rotate(9deg)"
               onLoad={handleImageLoad} 
             />
           </Box>
