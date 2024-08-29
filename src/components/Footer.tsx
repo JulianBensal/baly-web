@@ -3,6 +3,7 @@ import { Box, Flex, Image, Text, Stack, Link, Button } from "@chakra-ui/react";
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { useNavigate, useLocation } from 'react-router-dom'; // Importar hooks de navegación
 import Logo from '../assets/Logo.webp';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -91,8 +92,8 @@ const Footer: React.FC = () => {
               Nosotros
             </Text>
             <Text
-              as="a"
-              href="/baly-web/contact"
+              as={RouterLink}
+              to="/baly-web/contact"
               _hover={{ color: '#FFD700' }}
             >
               Contacto
