@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, cartCount, activeSection, o
         <Box as={RouterLink} to="/baly-web/" display="flex" alignItems="center">
           <Image src={Logo} alt="Baly Logo" h="8" w="auto" />
         </Box>
-        <Flex as="nav" display={{ base: 'none', md: 'flex' }} align="center" gap="6">
+        <Flex as="nav" display={{ base: 'none', md: 'flex' }} align="center" gap="6" marginLeft="80px">
           {['home', 'products', 'about'].map((section) => (
             <Text
               key={section}

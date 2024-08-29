@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
           </Stack>
 
           {/* Botones y Redes Sociales Centrados */}
-          <Stack align="center" spacing="4">
+          <Stack align="center" spacing="4" marginRight="100px">
             <Stack direction="row" spacing="4">
               <Link href="#" _hover={{ color: '#FFD700' }}>
                 <Box as={FaFacebook} boxSize="6" />

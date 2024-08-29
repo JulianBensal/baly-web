@@ -8,6 +8,7 @@ import ProductDetail from './components/ProductDetail';
 import AboutSection from './components/AboutSection';
 import Footer from './components/Footer';
 import ContactPage from './components/form/ContactPage'; // Import the new ContactPage component
+import NewsletterPopup from './components/NewsletterPopup'; // Import the NewsletterPopup component
 import { Flex, Box, Heading } from "@chakra-ui/react";
 import { FlavorName } from './components/types';
 import Tradicional from './assets/Carrusel/Tradicional_Carrusel.webp';
@@ -117,6 +118,7 @@ const App: React.FC = () => {
           <Route path="/baly-web/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
+        <NewsletterPopup /> {/* Add the NewsletterPopup component here */}
       </Flex>
     </Router>
   );

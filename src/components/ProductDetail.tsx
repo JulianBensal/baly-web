@@ -188,7 +188,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
             color={isSugarFree ? "gray.900" : "green.300"}
             _hover={{ 
               bg: isSugarFree ? "gray.900" : "green.300", 
-              color: isSugarFree ? "white" : "gray.900",
+              color: isSugarFree ? "green.300" : "gray.900",
+              borderColor: isSugarFree ? "green.300" : "gray.900"
             }}
             size="lg"
             mb="4"
