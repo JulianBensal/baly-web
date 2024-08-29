@@ -1,1 +1,1 @@
-export type FlavorName = 'Tradicional' | 'Amarillo' | 'Verde' | 'Rojo' | 'Próximamente';
+export type FlavorName = 'Tradicional' | 'Tropical' | 'Manzana verde' | 'Sandía' | 'Próximamente';

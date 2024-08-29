@@ -22,8 +22,21 @@ const PromoVideoSection: React.FC = () => {
         <source src="https://balybrasil.com.br/files/home/Video-20240221171312.mp4" type="video/mp4" /> {/* Enlace directo al video */}
         Your browser does not support the video tag.
       </Box>
-      <Box position="absolute" bottom="8" left="8" right="8" color="white">
-        <Heading as="h2" size="xl" fontWeight="extrabold" mb="2" color="#FFD700">Si hay fiesta hay Baly de 2 litros.</Heading>
+
+      {/* Superposición de sombra para mejorar la legibilidad del texto */}
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        w="full"
+        h="full"
+        bg="rgba(0, 0, 0, 0.6)" // Ajusta la opacidad según sea necesario
+        zIndex="1"
+      />
+
+      {/* Contenedor del texto */}
+      <Box position="absolute" bottom="8" left="8" right="8" color="white" zIndex="2">
+        <Heading as="h2" size="xl" fontWeight="extrabold" mb="2" color="#FFD700">Si hay fiesta… ¡Hay baly de 2 litros!</Heading>
         <Text fontSize="lg" fontWeight="medium">Conseguí Baly para tu negocio o evento</Text>
       </Box>
     </Box>

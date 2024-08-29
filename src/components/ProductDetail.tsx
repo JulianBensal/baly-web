@@ -16,7 +16,7 @@ import Amarillo_2L from '../assets/Gustos/Amarillo_2L.webp';
 import Verde_473ml from '../assets/Gustos/Verde_473ml.webp';
 import Verde_250ml from '../assets/Gustos/Verde_250ml.webp';
 import Verde_2L from '../assets/Gustos/Verde_2L.webp';
-import Proximamente from '../assets/Gustos/Próximamente.jpg';
+import Proximamente from '../assets/Gustos/Próximamente_black.png';
 import Amarillo_473ml_fin from '../assets/Gustos_Fin/Amarillo_473ml_fin.webp';
 import Amarillo_250ml_fin from '../assets/Gustos_Fin/Amarillo_250ml_fin.webp';
 import Amarillo_2L_fin from '../assets/Gustos_Fin/Amarillo_2L_fin.webp';
@@ -78,7 +78,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
           default:
             return Tradicional_473ml;
         }
-      case 'Rojo':
+      case 'Sandía':
         switch (size) {
           case '473ml':
             return Rojo_473ml;
@@ -89,7 +89,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
           default:
             return Rojo_473ml;
         }
-      case 'Amarillo':
+      case 'Tropical':
         switch (size) {
           case '473ml':
             return Amarillo_473ml;
@@ -100,7 +100,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
           default:
             return Amarillo_473ml;
         }
-      case 'Verde':
+      case 'Manzana verde':
         switch (size) {
           case '473ml':
             return Verde_473ml;
@@ -131,7 +131,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
           default:
             return Tradicional_473ml_fin;
         }
-      case 'Rojo':
+      case 'Sandía':
         switch (size) {
           case '473ml':
             return Rojo_473ml_fin;
@@ -142,7 +142,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
           default:
             return Rojo_473ml_fin;
         }
-      case 'Amarillo':
+      case 'Tropical':
         switch (size) {
           case '473ml':
             return Amarillo_473ml_fin;
@@ -153,7 +153,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
           default:
             return Amarillo_473ml_fin;
         }
-      case 'Verde':
+      case 'Manzana verde':
         switch (size) {
           case '473ml':
             return Verde_473ml_fin;
@@ -171,16 +171,31 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
 
   const imagePathFin = getImagePathFin(selectedFlavor.name, selectedSize.name);
 
+  const getFirstDescription = (flavor: FlavorName): string => {
+    switch (flavor) {
+      case 'Tradicional':
+        return "Con una combinación de Taurina, Cafeína y Vitaminas del Complejo B, Baly Tradicional es el sabor que conquistó Brasil. No importa el plan, siempre estamos juntos. ¡Baly, lo mejor para disfrutar cada momento!";
+      case 'Sandía':
+        return "¡Ahora en Argentina! Baly Sandía ya ha conquistado a muchos consumidores en todo Brasil, con toda la frescura y jugosidad de la sandía. ¡No te quedes sin probarlo!";
+      case 'Tropical':
+        return "Baly Tropical, la mezcla de sabores que trae el gustito brasileño en un mix de frutas amarillas. Combinando los sabores de las frutas tropicales, este sabor es como tener el verano todo el año.";
+      case 'Manzana verde':
+        return "Preferido de muchos, Baly Manzana Verde es un sabor simple y auténtico, perfecto para quienes aprecian la frescura de la manzana verde.";
+      default:
+        return "Estamos trabajando en nuevos y emocionantes sabores.";
+    }
+  }
+
   return (
     <Stack spacing="8" align="flex-start" w="full">
       <Flex direction={{ base: "column", md: "row" }} w="full" gap="8">
         {/* Primer Box - Detalles del Producto */}
         <Box bg="gray.900" p="6" borderRadius="lg" w={{ base: "full", md: "50%" }}>
           <Heading as="h2" size="lg" fontWeight="bold" mb="4" color="#FFD700">
-            Baly Energy Drink {selectedFlavor.name}
+            Baly {selectedFlavor.name}
           </Heading>
           <Text mb="4" fontSize="lg">
-            Con una combinación de Taurina, Cafeína y Vitaminas del Complejo B, Baly {selectedFlavor.name} es el sabor que conquistó Argentina. No importa el rol, estamos juntos siempre. ¡Baly es lo mejor del rol!
+            {getFirstDescription(selectedFlavor.name)}
           </Text>
           <Button
             onClick={() => setIsSugarFree(!isSugarFree)}
@@ -275,28 +290,28 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ selectedFlavor, selectedS
 
       {/* Sección de Información del Producto debajo de los Box */}
       <Box bg="#FFD700" py="16" px="8" borderRadius="lg" w="full" mt="8">
-        <Flex direction={{ base: "column", md: "row" }} align="center" justify="space-between" gap="8">
-          <Box>
-            <Heading as="h3" size="lg" fontWeight="bold" mb="4" color="black">
-              Información del Producto
-            </Heading>
-            <Text fontSize="lg" color="black" mb="4">
-              {productInfo[selectedFlavor.name].description}
-            </Text>
-            <Text fontSize="lg" color="black" mb="4">
-              {productInfo[selectedFlavor.name].details}
-            </Text>
-          </Box>
-          <Box>
-            <Image
-              src={imagePathFin}
-              alt={`Baly ${selectedFlavor.name} Bottle Tilted`}
-              maxH={currentSize2}	
-              objectFit="contain"
-              onLoad={handleImageLoad} 
-            />
-          </Box>
-        </Flex>
+      <Flex direction={{ base: "column", md: "row" }} align="center" justify="space-between" gap="8">
+        <Box minH="200px" w="full"> {/* Establece una altura mínima y ancho completo para el texto */}
+          <Heading as="h3" size="lg" fontWeight="bold" mb="4" color="black">
+            Información del Producto
+          </Heading>
+          <Text fontSize="lg" color="black" mb="4">
+            {productInfo[selectedFlavor.name].description}
+          </Text>
+          <Text fontSize="lg" color="black" mb="4">
+            {productInfo[selectedFlavor.name].details}
+          </Text>
+        </Box>
+        <Box>
+          <Image
+            src={imagePathFin}
+            alt={`Baly ${selectedFlavor.name} Bottle Tilted`}
+            maxH={currentSize2}	
+            objectFit="contain"
+            onLoad={handleImageLoad} 
+          />
+        </Box>
+      </Flex>
       </Box>
     </Stack>
   );

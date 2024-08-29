@@ -15,7 +15,8 @@ import Tradicional from './assets/Carrusel/Tradicional_Carrusel.webp';
 import Amarillo from './assets/Carrusel/Amarillo_Carrusel.webp';
 import Verde from './assets/Carrusel/Verde_Carrusel.webp';
 import Rojo from './assets/Carrusel/Rojo_Carrusel.webp';
-import Proximamente from './assets/Gustos/Próximamente.jpg';
+import Proximamente from './assets/Gustos/Próximamente.png';
+import Proximamente_Black from './assets/Gustos/Próximamente_black.png';
 
 const sizes = [
   { name: "2L", volume: "2000ml", price: 1000 },
@@ -25,32 +26,32 @@ const sizes = [
 
 const flavors: { id: number; name: FlavorName; image: string }[] = [
   { id: 1, name: "Tradicional", image: Tradicional }, // Default size
-  { id: 2, name: "Amarillo", image: Amarillo },
-  { id: 3, name: "Verde", image: Verde },
-  { id: 4, name: "Rojo", image: Rojo },
+  { id: 2, name: "Tropical", image: Amarillo },
+  { id: 3, name: "Manzana verde", image: Verde },
+  { id: 4, name: "Sandía", image: Rojo },
   { id: 5, name: "Próximamente", image: Proximamente },
   { id: 6, name: "Próximamente", image: Proximamente },
 ];
 
 const productInfo: Record<FlavorName, { description: string; details: string; image: string }> = {
   "Tradicional": {
-    description: "El Baly Tradicional tiene el sabor clásico de energéticos, intenso y refrescante.",
-    details: "Es perfecto para quienes buscan un impulso de energía para enfrentar los desafíos diarios, ya sea en el trabajo, en los estudios o en los momentos de diversión.",
+    description: "Baly Tradicional ofrece el sabor clásico de la bebida energética, cítrico y distintivo.",
+    details: "La presencia de cafeína, taurina y vitaminas del complejo B contribuye a un sabor realmente funcional, que te impulsa y te da energía para todos los momentos.",
     image: Tradicional
   },
-  "Amarillo": {
-    description: "Baly Amarillo ofrece un sabor cítrico y vibrante, con notas de limón y naranja.",
-    details: "Ideal para aquellos que buscan un sabor refrescante y un impulso de energía con un toque tropical.",
+  "Tropical": {
+    description: "Con notas deanana y maracuyá, Baly Tropical proporciona una experiencia de sabor única. ",
+    details: "¡Refrescate y disfruta de la energía del verano durante todo el año!",
     image: Amarillo
   },
-  "Verde": {
-    description: "Baly Verde combina el sabor de las manzanas verdes con un toque de kiwi.",
-    details: "Perfecto para los amantes de los sabores frutales que buscan una explosión de energía y frescura.",
+  "Manzana verde": {
+    description: "Con su esencia única y su toque brasileño, es la elección ideal para aquellos que buscan un sabor increíble.",
+    details: "La manzana verde se destaca por su suavidad y acidez equilibrada, y la presencia de cafeína, taurina y vitaminas del complejo B contribuye a un sabor realmente funcional, que te impulsa y te da energía para todos los momentos.",
     image: Verde
   },
-  "Rojo": {
-    description: "Baly Rojo mezcla el sabor intenso de las frutas rojas con un toque de guaraná.",
-    details: "Diseñado para los que buscan un sabor audaz y una carga extra de energía para sus actividades más intensas.",
+  "Sandía": {
+    description: "Las notas dulces de la sandía se destacan, y además de su increíble sabor",
+    details: "Baly Sandía ofrece la energía que ya conoces con un toque especial.",
     image: Rojo
   },
   "Próximamente": {
