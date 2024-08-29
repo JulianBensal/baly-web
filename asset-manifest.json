@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/baly-web/static/css/main.c800aa68.css",
-    "main.js": "/baly-web/static/js/main.321f16a5.js",
+    "main.js": "/baly-web/static/js/main.58c0ee67.js",
     "static/js/453.a25a298a.chunk.js": "/baly-web/static/js/453.a25a298a.chunk.js",
-    "static/media/Verde_473ml.png": "/baly-web/static/media/Verde_473ml.19ad97ca6ec0a2c3d4e5.png",
-    "static/media/Amarillo_473ml.png": "/baly-web/static/media/Amarillo_473ml.3c3dc8e343be1517af82.png",
-    "static/media/Tradicional_473ml.png": "/baly-web/static/media/Tradicional_473ml.c3912cfb5c602bd2b1f4.png",
-    "static/media/Rojo_473ml.png": "/baly-web/static/media/Rojo_473ml.cfdfe92326a1ff7ed472.png",
-    "static/media/Verde_250ml.png": "/baly-web/static/media/Verde_250ml.3f23caa7bcf1c2a908a3.png",
-    "static/media/Amarillo_250ml.png": "/baly-web/static/media/Amarillo_250ml.a38b5dc63a260a904ff6.png",
-    "static/media/Rojo_250ml.png": "/baly-web/static/media/Rojo_250ml.b5ba4046dfb17ac88ef6.png",
-    "static/media/Tradicional_250ml.png": "/baly-web/static/media/Tradicional_250ml.b7abd12dceb3da7bfae7.png",
-    "static/media/Amarillo_2L.png": "/baly-web/static/media/Amarillo_2L.30dcc0a2c0f2e71929c6.png",
-    "static/media/Rojo_2L.png": "/baly-web/static/media/Rojo_2L.6bf27a2ddbaef66c1ab8.png",
-    "static/media/Verde_2L.png": "/baly-web/static/media/Verde_2L.9d0965171375f88a514e.png",
-    "static/media/Tradicional_2L.png": "/baly-web/static/media/Tradicional_2L.84c8755e15d22f4a3974.png",
-    "static/media/baly-fondo.webp": "/baly-web/static/media/baly-fondo.721b49c864813dfc2856.webp",
+    "static/media/Verde_473ml.webp": "/baly-web/static/media/Verde_473ml.7b827e529febf30575f7.webp",
+    "static/media/Rojo_473ml.webp": "/baly-web/static/media/Rojo_473ml.0780698e9f6263f54914.webp",
+    "static/media/Tradicional_473ml.webp": "/baly-web/static/media/Tradicional_473ml.27edfd5580192769fad2.webp",
+    "static/media/Verde_250ml.webp": "/baly-web/static/media/Verde_250ml.83702fed11b13c2ce5f1.webp",
+    "static/media/Rojo_250ml.webp": "/baly-web/static/media/Rojo_250ml.27c25a826c03508e7bcc.webp",
+    "static/media/Tradicional_250ml.webp": "/baly-web/static/media/Tradicional_250ml.6e098a3d20517cccba39.webp",
+    "static/media/baly-fondo.webp": "/baly-web/static/media/baly-fondo.659550f8c3eb7cf6cf99.webp",
+    "static/media/Rojo_2L.webp": "/baly-web/static/media/Rojo_2L.618a2ad491e368378ab1.webp",
+    "static/media/Verde_2L.webp": "/baly-web/static/media/Verde_2L.1582b9f507dcae63fc8f.webp",
+    "static/media/Tradicional_2L.webp": "/baly-web/static/media/Tradicional_2L.7ddc1dacd5d9103f08a0.webp",
+    "static/media/Amarillo_473ml.webp": "/baly-web/static/media/Amarillo_473ml.52a54938e537d3cf0b25.webp",
+    "static/media/Amarillo_250ml.webp": "/baly-web/static/media/Amarillo_250ml.472e5ea1df99526e4019.webp",
+    "static/media/Amarillo_2L.webp": "/baly-web/static/media/Amarillo_2L.9fbec846cd4ea83b0764.webp",
     "static/media/Amarillo_2L_fin.webp": "/baly-web/static/media/Amarillo_2L_fin.270c841a1e124c05039a.webp",
     "static/media/Rojo_2L_fin.webp": "/baly-web/static/media/Rojo_2L_fin.b2afce8df9bb7cf36927.webp",
     "static/media/Amarillo_473ml_fin.webp": "/baly-web/static/media/Amarillo_473ml_fin.9af63170240d78a0f3b4.webp",
@@ -36,11 +36,11 @@
     "static/media/Logo.webp": "/baly-web/static/media/Logo.0ac765adf3775733fb7c.webp",
     "index.html": "/baly-web/index.html",
     "main.c800aa68.css.map": "/baly-web/static/css/main.c800aa68.css.map",
-    "main.321f16a5.js.map": "/baly-web/static/js/main.321f16a5.js.map",
+    "main.58c0ee67.js.map": "/baly-web/static/js/main.58c0ee67.js.map",
     "453.a25a298a.chunk.js.map": "/baly-web/static/js/453.a25a298a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c800aa68.css",
-    "static/js/main.321f16a5.js"
+    "static/js/main.58c0ee67.js"
   ]
 }
