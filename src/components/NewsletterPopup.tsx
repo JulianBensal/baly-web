@@ -68,13 +68,22 @@ export default function NewsletterPopup() {
         zIndex: 1000,
       }}
     >
-      <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <div style={{ flex: 1, marginRight: '16px' }}>
+      <div
+        style={{
+          maxWidth: '800px',
+          margin: '0 auto',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap', // Flex wrap para móviles
+        }}
+      >
+        <div style={{ flex: 1, marginRight: '16px', minWidth: '200px', marginBottom: '8px' }}>
           <h2 style={{ color: '#000', fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '8px' }}>¡Suscríbete a nuestras novedades!</h2>
           <p style={{ color: '#000', fontSize: '0.875rem', marginBottom: '8px' }}>Recibe las últimas noticias y ofertas especiales de Baly.</p>
         </div>
-        <form onSubmit={handleSubmit} style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <div style={{ display: 'flex', marginBottom: '8px' }}>
+        <form onSubmit={handleSubmit} style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: '200px' }}>
+          <div style={{ display: 'flex', marginBottom: '8px', flexWrap: 'wrap' }}>
             <input
               type="email"
               placeholder="Tu correo electrónico"
@@ -87,6 +96,8 @@ export default function NewsletterPopup() {
                 borderRadius: '4px',
                 border: isValidEmail || !email ? '1px solid #ccc' : '1px solid red',
                 color: isValidEmail || !email ? '#000' : 'red',
+                marginBottom: '8px', // Margin bottom para móviles
+                minWidth: '150px',
               }}
               required
             />
@@ -99,6 +110,7 @@ export default function NewsletterPopup() {
                 borderRadius: '4px',
                 border: 'none',
                 cursor: isValidEmail && email ? 'pointer' : 'not-allowed',
+                minWidth: '150px',
               }}
               disabled={!isValidEmail || !email}
             >

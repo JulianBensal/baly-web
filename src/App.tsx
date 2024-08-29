@@ -16,7 +16,6 @@ import Amarillo from './assets/Carrusel/Amarillo_Carrusel.webp';
 import Verde from './assets/Carrusel/Verde_Carrusel.webp';
 import Rojo from './assets/Carrusel/Rojo_Carrusel.webp';
 import Proximamente from './assets/Gustos/Próximamente.png';
-import Proximamente_Black from './assets/Gustos/Próximamente_black.png';
 
 const sizes = [
   { name: "2L", volume: "2000ml", price: 1000 },

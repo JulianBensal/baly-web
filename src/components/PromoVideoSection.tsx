@@ -1,9 +1,28 @@
-import React from 'react';
-import { Box, Heading, Text } from "@chakra-ui/react";
+import React, { useState } from 'react';
+import { Box, Heading, Text, Spinner } from "@chakra-ui/react";
 
 const PromoVideoSection: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleVideoLoaded = () => {
+    setIsLoading(false);
+  };
+
   return (
     <Box w="full" bg="gray.900" position="relative" overflow="hidden" height="calc(100vh - 80px)">
+      {/* Ruedita de cargando */}
+      {isLoading && (
+        <Box
+          position="absolute"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          zIndex="2"
+        >
+          <Spinner size="xl" color="#FFD700" />
+        </Box>
+      )}
+
       <Box
         as="video"
         id="promoVideo"
@@ -18,8 +37,9 @@ const PromoVideoSection: React.FC = () => {
         playsInline
         autoPlay // Asegura que el video se reproduzca automáticamente
         poster="/placeholder.svg?height=600&width=1200&text=Baly+Video+Poster"
+        onLoadedData={handleVideoLoaded} // Oculta el spinner cuando el video está cargado
       >
-        <source src="https://balybrasil.com.br/files/home/Video-20240221171312.mp4" type="video/mp4" /> {/* Enlace directo al video */}
+        <source src="https://balybrasil.com.br/files/home/Video-20240221171312.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </Box>
 
