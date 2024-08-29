@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/baly-web/static/css/main.c800aa68.css",
-    "main.js": "/baly-web/static/js/main.87e94ea3.js",
+    "main.js": "/baly-web/static/js/main.35e2d467.js",
     "static/js/453.a25a298a.chunk.js": "/baly-web/static/js/453.a25a298a.chunk.js",
     "static/media/Verde_473ml.webp": "/baly-web/static/media/Verde_473ml.7b827e529febf30575f7.webp",
     "static/media/Rojo_473ml.webp": "/baly-web/static/media/Rojo_473ml.0780698e9f6263f54914.webp",
@@ -25,10 +25,10 @@
     "static/media/Rojo_250ml_fin.webp": "/baly-web/static/media/Rojo_250ml_fin.ac162c622403c6c9337b.webp",
     "static/media/Verde_473ml_fin.webp": "/baly-web/static/media/Verde_473ml_fin.07f57ef91599258dee06.webp",
     "static/media/Verde_250ml_fin.webp": "/baly-web/static/media/Verde_250ml_fin.aee60c548419e1f726e7.webp",
+    "static/media/Tradicional_2L_fin.webp": "/baly-web/static/media/Tradicional_2L_fin.ddf768e34ec39cf5fb2d.webp",
     "static/media/Próximamente.png": "/baly-web/static/media/Próximamente.d0bf3cea67da4b17adc4.png",
-    "static/media/Tradicional_2L_fin.webp": "/baly-web/static/media/Tradicional_2L_fin.d5bfdaa755b3a10de3a1.webp",
-    "static/media/Tradicional_473ml_fin.webp": "/baly-web/static/media/Tradicional_473ml_fin.a50fca24d3ca55ff4736.webp",
-    "static/media/Tradicional_250ml_fin.webp": "/baly-web/static/media/Tradicional_250ml_fin.b867c4f907a973e03684.webp",
+    "static/media/Tradicional_473ml_fin.webp": "/baly-web/static/media/Tradicional_473ml_fin.38b7985731b8a833a056.webp",
+    "static/media/Tradicional_250ml_fin.webp": "/baly-web/static/media/Tradicional_250ml_fin.466acfbd1cc1453a0219.webp",
     "static/media/Próximamente_black.png": "/baly-web/static/media/Próximamente_black.982b8f71a0edb54526de.png",
     "static/media/Tradicional_Carrusel.webp": "/baly-web/static/media/Tradicional_Carrusel.d52d0d76c1a97476128c.webp",
     "static/media/Rojo_Carrusel.webp": "/baly-web/static/media/Rojo_Carrusel.892f23663e23ee954c98.webp",
@@ -37,11 +37,11 @@
     "static/media/Logo.webp": "/baly-web/static/media/Logo.0ac765adf3775733fb7c.webp",
     "index.html": "/baly-web/index.html",
     "main.c800aa68.css.map": "/baly-web/static/css/main.c800aa68.css.map",
-    "main.87e94ea3.js.map": "/baly-web/static/js/main.87e94ea3.js.map",
+    "main.35e2d467.js.map": "/baly-web/static/js/main.35e2d467.js.map",
     "453.a25a298a.chunk.js.map": "/baly-web/static/js/453.a25a298a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c800aa68.css",
-    "static/js/main.87e94ea3.js"
+    "static/js/main.35e2d467.js"
   ]
 }
