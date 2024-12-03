@@ -8,13 +8,14 @@ import ProductDetail from './components/ProductDetail';
 import AboutSection from './components/AboutSection';
 import Footer from './components/Footer';
 import ContactPage from './components/form/ContactPage'; // Import the new ContactPage component
+import NewsletterPopup from './components/NewsletterPopup'; // Import the NewsletterPopup component
 import { Flex, Box, Heading } from "@chakra-ui/react";
 import { FlavorName } from './components/types';
-import Tradicional from './assets/Gustos/Tradicional_473ml.png';
-import Amarillo from './assets/Gustos/Amarillo_473ml.png';
-import Verde from './assets/Gustos/Verde_473ml.png';
-import Rojo from './assets/Gustos/Rojo_473ml.png';
-import Proximamente from './assets/Gustos/Próximamente.jpg';
+import Tradicional from './assets/Carrusel/Tradicional_Carrusel.webp';
+import Amarillo from './assets/Carrusel/Amarillo_Carrusel.webp';
+import Verde from './assets/Carrusel/Verde_Carrusel.webp';
+import Rojo from './assets/Carrusel/Rojo_Carrusel.webp';
+import Proximamente from './assets/Gustos/Próximamente.png';
 
 const sizes = [
   { name: "2L", volume: "2000ml", price: 1000 },
@@ -22,59 +23,46 @@ const sizes = [
   { name: "250ml", volume: "250ml", price: 300 },
 ];
 
-const basePath = './assets/Gustos';
-
-const getFlavorImage = (flavorName: FlavorName, size: string, basePath: string) => {
-  if (flavorName === "Próximamente") {
-    return `${basePath}/Próximamente_${size}.jpg`;
-  } else {
-    const path = `${basePath}/${flavorName}_${size}.png`;
-    console.log(`Image path for ${flavorName} (${size}):`, path);
-    return path;
-  }
-};
-
 const flavors: { id: number; name: FlavorName; image: string }[] = [
   { id: 1, name: "Tradicional", image: Tradicional }, // Default size
-  { id: 2, name: "Amarillo", image: Amarillo },
-  { id: 3, name: "Verde", image: Verde },
-  { id: 4, name: "Rojo", image: Rojo },
+  { id: 2, name: "Tropical", image: Amarillo },
+  { id: 3, name: "Manzana verde", image: Verde },
+  { id: 4, name: "Sandía", image: Rojo },
   { id: 5, name: "Próximamente", image: Proximamente },
   { id: 6, name: "Próximamente", image: Proximamente },
 ];
 
 const productInfo: Record<FlavorName, { description: string; details: string; image: string }> = {
   "Tradicional": {
-    description: "El Baly Tradicional tiene el sabor clásico de energéticos, intenso y refrescante.",
-    details: "Es perfecto para quienes buscan un impulso de energía para enfrentar los desafíos diarios, ya sea en el trabajo, en los estudios o en los momentos de diversión.",
-    image: "/placeholder.svg?height=400&width=200&text=Baly+Tradicional+Tilted"
+    description: "Baly Tradicional ofrece el sabor clásico de la bebida energética, cítrico y distintivo.",
+    details: "La presencia de cafeína, taurina y vitaminas del complejo B contribuye a un sabor realmente funcional, que te impulsa y te da energía para todos los momentos.",
+    image: Tradicional
   },
-  "Amarillo": {
-    description: "Baly Amarillo ofrece un sabor cítrico y vibrante, con notas de limón y naranja.",
-    details: "Ideal para aquellos que buscan un sabor refrescante y un impulso de energía con un toque tropical.",
-    image: "/placeholder.svg?height=400&width=200&text=Baly+Amarillo+Tilted"
+  "Tropical": {
+    description: "Con notas deanana y maracuyá, Baly Tropical proporciona una experiencia de sabor única. ",
+    details: "¡Refrescate y disfruta de la energía del verano durante todo el año!",
+    image: Amarillo
   },
-  "Verde": {
-    description: "Baly Verde combina el sabor de las manzanas verdes con un toque de kiwi.",
-    details: "Perfecto para los amantes de los sabores frutales que buscan una explosión de energía y frescura.",
-    image: "/placeholder.svg?height=400&width=200&text=Baly+Verde+Tilted"
+  "Manzana verde": {
+    description: "Con su esencia única y su toque brasileño, es la elección ideal para aquellos que buscan un sabor increíble.",
+    details: "La manzana verde se destaca por su suavidad y acidez equilibrada, y la presencia de cafeína, taurina y vitaminas del complejo B contribuye a un sabor realmente funcional, que te impulsa y te da energía para todos los momentos.",
+    image: Verde
   },
-  "Rojo": {
-    description: "Baly Rojo mezcla el sabor intenso de las frutas rojas con un toque de guaraná.",
-    details: "Diseñado para los que buscan un sabor audaz y una carga extra de energía para sus actividades más intensas.",
-    image: "/placeholder.svg?height=400&width=200&text=Baly+Rojo+Tilted"
+  "Sandía": {
+    description: "Las notas dulces de la sandía se destacan, y además de su increíble sabor",
+    details: "Baly Sandía ofrece la energía que ya conoces con un toque especial.",
+    image: Rojo
   },
   "Próximamente": {
     description: "Estamos trabajando en nuevos y emocionantes sabores.",
     details: "Mantente atento a nuestras redes sociales para ser el primero en probar nuestras nuevas creaciones.",
-    image: "/placeholder.svg?height=400&width=200&text=Baly+Próximamente+Tilted"
+    image: Proximamente
   }
 };
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [selectedSize, setSelectedSize] = useState(sizes[1]);
   const [isSugarFree, setIsSugarFree] = useState(false);
@@ -83,17 +71,6 @@ const App: React.FC = () => {
     id: 1,
     name: "Tradicional"
   });
-
-  const togglePlay = () => {
-    const video = document.getElementById('promoVideo') as HTMLVideoElement;
-    if (video.paused) {
-      video.play();
-      setIsPlaying(true);
-    } else {
-      video.pause();
-      setIsPlaying(false);
-    }
-  };
 
   const addToCart = () => {
     setCartCount(prevCount => prevCount + 1);
@@ -111,10 +88,10 @@ const App: React.FC = () => {
           onAddToCart={addToCart}
         />
         <Routes>
-          <Route path="/" element={
+          <Route path="/baly-web/" element={
             <>
               <HeroSection />
-              <PromoVideoSection isPlaying={isPlaying} togglePlay={togglePlay} />
+              <PromoVideoSection />
               <Box id="products" py={{ base: 12, md: 24 }}>
                 <Box maxW="7xl" mx="auto" px="4">
                   <Heading as="h2" size="2xl" fontWeight="bold" mb="12" textAlign="center" color="#FFD700">Nuestros Productos</Heading>
@@ -138,9 +115,10 @@ const App: React.FC = () => {
               <AboutSection />
             </>
           } />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/baly-web/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
+        <NewsletterPopup /> {/* Add the NewsletterPopup component here */}
       </Flex>
     </Router>
   );

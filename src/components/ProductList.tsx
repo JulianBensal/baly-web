@@ -1,5 +1,3 @@
-// components/ProductList.tsx
-
 import React from 'react';
 import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import { FlavorName } from './types';
@@ -24,15 +22,28 @@ const ProductList: React.FC<ProductListProps> = ({ flavors, selectedFlavor, setS
         >
           <Box
             w="24"
-            h="24"
+            h={selectedFlavor.id === flavor.id ? "28" : "24"} // Aumentar la altura cuando está seleccionada
             overflow="hidden"
             borderRadius="lg"
             borderWidth={selectedFlavor.id === flavor.id ? '4px' : '1px'}
             borderColor={selectedFlavor.id === flavor.id ? '#FFD700' : 'gray.300'}
           >
-            <Image src={flavor.image} alt={flavor.name} w="full" h="full" objectFit="cover" />
+            <Image 
+              src={flavor.image} 
+              alt={flavor.name} 
+              w="full" 
+              h="full" 
+              objectFit="cover" 
+              objectPosition="top" // Alinea la imagen hacia arriba
+            />
           </Box>
-          <Text mt="2" textAlign="center" fontSize="sm" fontWeight="medium" color={selectedFlavor.id === flavor.id ? '#FFD700' : 'white'}>
+          <Text 
+            mt="2" 
+            textAlign="center" 
+            fontSize="sm" 
+            fontWeight={'bold'} // Texto en negrita si está seleccionada
+            color={selectedFlavor.id === flavor.id ? '#FFD700' : 'white'}
+          >
             {flavor.name}
           </Text>
         </Box>
