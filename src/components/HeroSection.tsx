@@ -5,7 +5,7 @@ import Fondo from '../assets/baly-fondo.webp';
 const HeroSection: React.FC = () => {
   return (
     <Box 
-      id="home" 
+      id="inicio" 
       w="full" 
       h={{ base: '200px', md: '420px' }} // Ajusta la altura, asegurando que sea visible en móviles
       bgImage={Fondo} 

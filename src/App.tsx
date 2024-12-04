@@ -63,7 +63,7 @@ const productInfo: Record<FlavorName, { description: string; details: string; im
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('inicio');
   const [selectedSize, setSelectedSize] = useState(sizes[1]);
   const [isSugarFree, setIsSugarFree] = useState(false);
 
@@ -92,7 +92,7 @@ const App: React.FC = () => {
             <>
               <HeroSection />
               <PromoVideoSection />
-              <Box id="products" py={{ base: 12, md: 24 }}>
+              <Box id="productos" py={{ base: 12, md: 24 }}>
                 <Box maxW="7xl" mx="auto" px="4">
                   <Heading as="h2" size="2xl" fontWeight="bold" mb="12" textAlign="center" color="#FFD700">Nuestros Productos</Heading>
                   <ProductList 

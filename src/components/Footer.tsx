@@ -69,16 +69,16 @@ const Footer: React.FC = () => {
           <Stack align="left" spacing="4" fontSize="sm">
             <Text
               as="a"
-              href="#home"
-              onClick={(event) => handleNavClick(event, 'home')}
+              href="#inicio"
+              onClick={(event) => handleNavClick(event, 'inicio')}
               _hover={{ color: '#FFD700' }}
             >
               Inicio
             </Text>
             <Text
               as="a"
-              href="#products"
-              onClick={(event) => handleNavClick(event, 'products')}
+              href="#productos"
+              onClick={(event) => handleNavClick(event, 'productos')}
               _hover={{ color: '#FFD700' }}
             >
               Productos

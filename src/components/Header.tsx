@@ -38,31 +38,33 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, cartCount, activeSection, o
         <Box as={RouterLink} to="/" display="flex" alignItems="center">
           <Image src={Logo} alt="Baly Logo" h="8" w="auto" />
         </Box>
-        <Flex as="nav" display={{ base: 'none', md: 'flex' }} align="center" gap="6" marginLeft="80px">
-          {['home', 'products', 'about'].map((section) => (
-            <Text
-              key={section}
-              as="a"
-              href={`#${section}`}
-              onClick={(event) => handleNavClick(event, section)}
-              style={{ cursor: 'pointer', color: activeSection === section ? '#FFD700' : 'white', fontWeight: 'bold' }}
-              _hover={{ color: '#FFD700' }}
-            >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
-            </Text>
-          ))}
-          <Box
-            as={RouterLink}
-            to="/contact"
-            display="flex"
-            alignItems="center"
-            style={{ color: activeSection === 'contact' ? '#FFD700' : 'white', fontWeight: 'bold' }}
-            onClick={() => onSectionClick('contact')}
-          >
-            Contact
-          </Box>
-        </Flex>
-        <Flex align="center">
+        <Flex flex="1" justify="center">
+          <Flex as="nav" display={{ base: 'none', md: 'flex' }} align="center" gap="6">
+            {['inicio', 'productos', 'sobre nosotros'].map((section) => (
+              <Text
+                key={section}
+                as="a"
+                href={`#${section}`}
+                onClick={(event) => handleNavClick(event, section)}
+                style={{ cursor: 'pointer', color: activeSection === section ? '#FFD700' : 'white', fontWeight: 'bold' }}
+                _hover={{ color: '#FFD700' }}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </Text>
+            ))}
+                <Box
+                  as={RouterLink}
+                  to="/contact"
+                  display="flex"
+                  alignItems="center"
+                  style={{ color: activeSection === 'contact' ? '#FFD700' : 'white', fontWeight: 'bold' }}
+                  onClick={() => onSectionClick('contact')}
+                >
+                  Contacto
+                </Box>
+              </Flex>
+            </Flex>
+        {/* <Flex align="center">
           <Button bg="#FFD700" color="black" _hover={{ bg: '#FFA500' }} borderRadius="full" onClick={onAddToCart}>
             <Box as={FaShoppingCart} mr="2" />
             <Text display={{ base: 'none', sm: 'inline' }}>Carrito</Text>
@@ -74,12 +76,12 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, cartCount, activeSection, o
             icon={isMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
             onClick={onToggleMenu}
           />
-        </Flex>
+        </Flex> */}
       </Flex>
       {isMenuOpen && (
         <Box display={{ md: 'none' }} p="4">
           <Stack spacing="4">
-            {['home', 'products', 'about'].map((section) => (
+            {['inicio', 'productos', 'sobre nosotros'].map((section) => (
               <Text
                 key={section}
                 as="a"
