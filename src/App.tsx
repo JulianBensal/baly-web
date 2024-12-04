@@ -88,7 +88,7 @@ const App: React.FC = () => {
           onAddToCart={addToCart}
         />
         <Routes>
-          <Route path="/baly-web/" element={
+          <Route path="/" element={
             <>
               <HeroSection />
               <PromoVideoSection />
@@ -115,7 +115,7 @@ const App: React.FC = () => {
               <AboutSection />
             </>
           } />
-          <Route path="/baly-web/contact" element={<ContactPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
         <NewsletterPopup /> {/* Add the NewsletterPopup component here */}

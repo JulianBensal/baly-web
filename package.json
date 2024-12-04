@@ -2,7 +2,7 @@
   "name": "baly-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://julianbensal.github.io/baly-web/",
+  "homepage": "https://www.energiz.ar/",
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
@@ -17,6 +17,7 @@
     "@types/react-datepicker": "^7.0.0",
     "@types/react-dom": "^18.3.0",
     "date-fns": "^3.6.0",
+    "firebase": "^11.0.2",
     "framer-motion": "^11.3.30",
     "gh-pages": "^6.1.1",
     "lucide-react": "^0.436.0",

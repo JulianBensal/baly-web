@@ -13,10 +13,10 @@ const Footer: React.FC = () => {
   const handleNavClick = (event: React.MouseEvent<HTMLElement>, section: string) => {
     event.preventDefault(); // Previene la acción predeterminada del enlace
     
-    if (location.pathname === "/baly-web/") {
+    if (location.pathname === "/") {
       document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      navigate(`/baly-web/`);
+      navigate(`/`);
       setTimeout(() => {
         document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
       }, 100); // Espera a que la navegación a la página principal ocurra antes de desplazarse
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
             </Text>
             <Text
               as={RouterLink}
-              to="/baly-web/contact"
+              to="/contact"
               _hover={{ color: '#FFD700' }}
             >
               Contacto

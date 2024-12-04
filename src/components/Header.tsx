@@ -21,10 +21,10 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, cartCount, activeSection, o
   const handleNavClick = (event: React.MouseEvent<HTMLElement>, section: string) => {
     event.preventDefault(); // Previene la acción predeterminada del enlace
   
-    if (location.pathname === "/baly-web/") {
+    if (location.pathname === "/") {
       document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
     } else {
-      navigate(`/baly-web/`);
+      navigate(`/`);
       setTimeout(() => {
         document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
       }, 100); // Espera a que la navegación a la página principal ocurra antes de desplazarse
@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, cartCount, activeSection, o
   return (
     <Box as="header" position="sticky" top="0" zIndex="50" w="full" borderBottom="1px" borderColor="gray.800" bg="blackAlpha.800" backdropFilter="blur(10px)">
       <Flex align="center" justify="space-between" py="4" px="6">
-        <Box as={RouterLink} to="/baly-web/" display="flex" alignItems="center">
+        <Box as={RouterLink} to="/" display="flex" alignItems="center">
           <Image src={Logo} alt="Baly Logo" h="8" w="auto" />
         </Box>
         <Flex as="nav" display={{ base: 'none', md: 'flex' }} align="center" gap="6" marginLeft="80px">
@@ -53,7 +53,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, cartCount, activeSection, o
           ))}
           <Box
             as={RouterLink}
-            to="/baly-web/contact"
+            to="/contact"
             display="flex"
             alignItems="center"
             style={{ color: activeSection === 'contact' ? '#FFD700' : 'white', fontWeight: 'bold' }}
@@ -96,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({ isMenuOpen, cartCount, activeSection, o
             ))}
             <Box
               as={RouterLink}
-              to="/baly-web/contact"
+              to="/contact"
               display="flex"
               alignItems="center"
               style={{ color: activeSection === 'contact' ? '#FFD700' : 'white', fontWeight: 'bold' }}
